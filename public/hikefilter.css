@@ -1,0 +1,68 @@
+.pic{
+  height:100vh;
+  width:100vw;
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5) ), url(IMG_2876.jpg) no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
+
+#splashTitle{
+  font-family: 'Josefin Slab', serif;
+  margin-top:8%;
+  text-align: center;
+  color: white;
+  font-size: 500%;
+  font-weight: 100;
+}
+#container{
+  width:50%;
+  height:40%;
+  margin: 5% 10% 10% 36%;
+}
+#filter{
+  width:55%;
+  height:90%;
+  font-family: 'Josefin Slab', serif;
+  display: inline-block;
+  vertical-align: top;
+  color: white;
+}
+#left{
+  width:40%;
+  height: 90%;
+  display: inline-block;
+  font-family: 'Josefin Slab', serif;
+  font-weight: 900;
+  font-size: 120%;
+  color: white;
+  vertical-align: top;
+}
+#texty{
+  width: 30%
+}
+#two{
+  margin-left: 20px;
+  cursor: pointer; cursor: hand;
+}
+.opt{
+  margin-bottom: 18px;
+  font-family: 'Josefin Slab', serif;
+  -webkit-appearance: none;
+  width: 30%;
+  height: 8%;
+  text-align: center;
+  cursor: pointer; cursor: hand;
+}
+#submit{
+  width: 55%;
+  background-color: black;
+  font-family: 'Josefin Slab', serif;
+  font-size: 120%;
+  color: white;
+  border-radius: 5px;
+  border: 2px solid gray;
+  margin-top: 20px;
+  margin-left: -50%;
+}

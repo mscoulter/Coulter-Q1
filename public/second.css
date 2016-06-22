@@ -1,0 +1,20 @@
+body{
+  height: 100vh;
+  width: 100vw;
+  margin: 0;
+  padding:0;
+}
+#results{
+  font-family: 'Josefin Slab', serif;
+  margin-top:8%;
+  text-align: center;
+  color: white;
+  font-size: 500%;
+  font-weight: 100;
+}
+
+#map{
+  height:100%;
+  margin: 0;
+  padding: 0;
+}

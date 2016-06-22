@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>PE&Delta;Kspec</title>
+    <link rel="stylesheet" href="hikefilter.css" media="screen" title="no title" charset="utf-8">
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Slab:300,400" rel="stylesheet">
+  </head>
+  <body class = "pic">
+    <h1 id = splashTitle><p>PE&Delta;Kspec</p></h1>
+    <div id="container">
+      <div id="left">
+        Hike Length (RT):<br><br>
+        Vertical Gain:<br><br>
+        Exposure:<br><br>
+        Current Address:<br><br>
+        Time to Trailhead:<br><br>
+        2WD Access:<br><br>
+      </div>
+      <form id="filter" action="second.html" method="get">
+        <select name = "len" class="opt">
+          <option value=0>No Preference</option>
+          <option value=5><5 miles</option>
+          <option value=10><10 miles</option>
+          <option value=15><15 miles</option>
+          <option value=20><20 miles</option>
+          <option value=30><30 miles</option>
+        </select><br>
+        <select name = "gain" class="opt">
+          <option value=0>No Preference</option>
+          <option value=3000><3000ft</option>
+          <option value=4000><4000ft</option>
+          <option value=5000><5000ft</option>
+          <option value=6000><6000ft</option>
+          <option value=7000><7000ft</option>
+        </select><br>
+        <select name = "class" class="opt">
+          <option value=0>No Preference</option>
+          <option value=1>Class 1</option>
+          <option value=2>Class 2</option>
+          <option value=3>Class 3</option>
+          <option value=4>Class 4</option>
+        </select><br>
+        <input type="text" name="address" id="texty" class="opt" placeholder="200 E Colfax Ave, Denver, CO 80203" value=""><br>
+        <select name = "drive" class ="opt">
+          <option value=0>No Preference</option>
+          <option value=1><1 hour</option>
+          <option value=2><2 hours</option>
+          <option value=3><3 hours</option>
+          <option value=4><4 hours</option>
+          <option value=5><5 hours</option>
+          <option value=6><6 hours</option>
+          <option value="DGAF">DGAF</option>
+        </select><br>
+        <input type="radio" name="2WD" class="two" checked="checked" value="true">Yes<input type="radio" name="2WD" id="two" value="false">No<br>
+        <input type="submit" id= "submit" value="Find a 14er">
+      </form>
+    </div>
+    <script   src="https://code.jquery.com/jquery-2.2.4.js"   integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="   crossorigin="anonymous"></script>
+    <script src="hikefilter.js" charset="utf-8"></script>
+  </body>
+</html>
