@@ -1,9 +1,9 @@
-[
+var data = [
   {
     "mountain": "Capitol_Peak",
     "elevation" : 14130,
     "heightRank" : 29,
-    "coordinates" : "39.0901+-107.0459",
+    "coordinates" : "39.1503+-107.0831",
     "routes" : [{
         "name" : "Northeast_Ridge",
         "length" : 17,
@@ -16,14 +16,14 @@
         "camping" : true,
         "fishing" : true,
         "permitRequired" : false,
-        "2WDaccess": true,
+        "TWDaccess": true,
       }]
   },
   {
     "mountain" : "Little_Bear_Peak",
     "elevation" : 14037,
     "heightRank" : 44,
-    "coordinates" : "37.3400+-105.2948",
+    "coordinates" : "37.5667+-105.4972",
     "routes" : [{
         "name" : "West_Ridge",
         "length" : 14,
@@ -36,14 +36,14 @@
         "camping" : true,
         "fishing" : true,
         "Permit Required" : false,
-        "2WDaccess": true,
+        "TWDaccess": true,
       }]
   },
   {
     "mountain" : "Pyramid_Peak",
     "elevation" : 14018,
     "heightRank" : 47,
-    "coordinates" : "39.0417+-106.5659",
+    "coordinates" : "38.8450+-120.1578",
     "routes" : [{
         "name" : "Northeast Ridge",
         "length" : 8.25,
@@ -56,14 +56,14 @@
         "camping" : true,
         "fishing" : true,
         "Permit Required" : true,
-        "2WDaccess": true,
+        "TWDaccess": true,
       }]
   },
   {
     "mountain" : "North_Maroon_Peak",
     "elevation" : 14014,
     "heightRank" : "Unranked",
-    "coordinates" : "39.0434+-106.5914",
+    "coordinates" : "39.0761+-106.9867",
     "routes" : [{
         "name" : "Northeast_Ridge",
         "length" : 9.25,
@@ -76,14 +76,14 @@
         "camping" : true,
         "fishing" : true,
         "Permit Required" : false,
-        "2WDaccess" : true,
+        "TWDaccess" : true,
       }]
   },
   {
     "mountain" : "Mt._Wilson",
     "elevation" : 14246,
     "heightRank" : 16,
-    "coordinates" : "37.5021+-107.5927",
+    "coordinates" : "34.2239+-118.0612",
     "routes" : [{
         "name" : "North_Slopes",
         "length" : 11,
@@ -96,14 +96,14 @@
         "camping" : false,
         "fishing" : false,
         "Permit Required" : false,
-        "2WDaccess" : true,
+        "TWDaccess" : true,
       }]
   },
   {
     "mountain" : "Crestone_Needle",
     "elevation" : 14197,
     "heightRank" : 19,
-    "coordinates" : "37.5753+-105.3434",
+    "coordinates" : "37.9647, 105.5767",
     "routes" : [{
         "name" : "South_Face",
         "length" : 12,
@@ -116,14 +116,14 @@
         "camping" : true,
         "fishing" : true,
         "Permit Required" : false,
-        "2WDaccess" : false,
+        "TWDaccess" : false,
       }]
   },
   {
     "mountain" : "Sunlight Peak",
     "elevation" : 14059,
     "heightRank" : 39,
-    "coordinates" : "37.3738+-107.3543",
+    "coordinates" : "37.6272+-107.5959",
     "routes" : [{
         "name" : "South_Face",
         "length" : 17,
@@ -136,7 +136,7 @@
         "camping" : true,
         "fishing" : true,
         "Permit Required" : false,
-        "2WDaccess": false,
+        "TWDaccess": true,
       }]
   }
 ]
@@ -158,7 +158,7 @@ $("#submit").click(function() {
     var gain = y[2][0];
     var exposure = y[3][0];
     var address = (y[4][0]).replace(/%2C/,"")
-    var access = y[6][0];
+    var access = y[5][0];
 
     console.log(length);
     console.log(gain);
@@ -166,13 +166,23 @@ $("#submit").click(function() {
     console.log(address);
     console.log(access);
 
+// n.routes[0].TWDaccess==access
 
+console.log(data[0].routes[0].TWDaccess);
 
-    $.grep(data, function(n, i){
-        if(n.routes[0].length<length){
-          console.log(n.mountain);
-        }
-      })
+var results=[]
+var resultCoords=[]
+
+$.grep(data, function(n, i){
+    if(n.routes[0].length<length && n.routes[0].elevationGain<gain && n.routes[0].class<exposure && n.routes[0].TWDaccess==access){
+      results.push(n)
+      resultCoords.push(n.coordinates)
+    }
+  })
+
+console.log(results);
+console.log(resultCoords);
+
 
 
 var map;
@@ -192,6 +202,14 @@ function initMap (){
     });
   });
 
-
-
+  for (var i = 0; i < resultCoords.length; i++) {
+    var lat = parseFloat(resultCoords[i].slice(0,7))
+    var long = parseFloat(resultCoords[i].slice(9,17))*-1
+    console.log(lat+", "+long);
+    var marker = new google.maps.Marker({
+      position: {lat: lat, lng: long},
+      map: map,
+      title: "Results"
+    })
+  }
 }
