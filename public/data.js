@@ -1,9 +1,9 @@
-[
+var data = [
   {
     "mountain": "Capitol_Peak",
     "elevation" : 14130,
     "heightRank" : 29,
-    "coordinates" : "39.0901+-107.0459",
+    "coordinates" : "39.1503+-107.0831",
     "routes" : [{
         "name" : "Northeast_Ridge",
         "length" : 17,
@@ -16,14 +16,14 @@
         "camping" : true,
         "fishing" : true,
         "permitRequired" : false,
-        "2WDaccess": true,
+        "TWDaccess": 2,
       }]
   },
   {
     "mountain" : "Little_Bear_Peak",
     "elevation" : 14037,
     "heightRank" : 44,
-    "coordinates" : "37.3400+-105.2948",
+    "coordinates" : "37.5667+-105.4972",
     "routes" : [{
         "name" : "West_Ridge",
         "length" : 14,
@@ -36,14 +36,14 @@
         "camping" : true,
         "fishing" : true,
         "Permit Required" : false,
-        "2WDaccess": true,
+        "TWDaccess": 2,
       }]
   },
   {
     "mountain" : "Pyramid_Peak",
     "elevation" : 14018,
     "heightRank" : 47,
-    "coordinates" : "39.0417+-106.5659",
+    "coordinates" : "39.0418+-106.5701",
     "routes" : [{
         "name" : "Northeast Ridge",
         "length" : 8.25,
@@ -56,14 +56,14 @@
         "camping" : true,
         "fishing" : true,
         "Permit Required" : true,
-        "2WDaccess": true,
+        "TWDaccess": 2,
       }]
   },
   {
     "mountain" : "North_Maroon_Peak",
     "elevation" : 14014,
     "heightRank" : "Unranked",
-    "coordinates" : "39.0434+-106.5914",
+    "coordinates" : "39.0761+-106.9867",
     "routes" : [{
         "name" : "Northeast_Ridge",
         "length" : 9.25,
@@ -76,14 +76,14 @@
         "camping" : true,
         "fishing" : true,
         "Permit Required" : false,
-        "2WDaccess" : true,
+        "TWDaccess" : 2,
       }]
   },
   {
     "mountain" : "Mt._Wilson",
     "elevation" : 14246,
     "heightRank" : 16,
-    "coordinates" : "37.5021+-107.5927",
+    "coordinates" : "37.8392+-107.9915",
     "routes" : [{
         "name" : "North_Slopes",
         "length" : 11,
@@ -96,14 +96,14 @@
         "camping" : false,
         "fishing" : false,
         "Permit Required" : false,
-        "2WDaccess" : true,
+        "TWDaccess" : 2,
       }]
   },
   {
     "mountain" : "Crestone_Needle",
     "elevation" : 14197,
     "heightRank" : 19,
-    "coordinates" : "37.5753+-105.3434",
+    "coordinates" : "37.9647, 105.5767",
     "routes" : [{
         "name" : "South_Face",
         "length" : 12,
@@ -116,14 +116,14 @@
         "camping" : true,
         "fishing" : true,
         "Permit Required" : false,
-        "2WDaccess" : false,
+        "TWDaccess" : 4,
       }]
   },
   {
     "mountain" : "Sunlight Peak",
     "elevation" : 14059,
     "heightRank" : 39,
-    "coordinates" : "37.3738+-107.3543",
+    "coordinates" : "37.6272+-107.5959",
     "routes" : [{
         "name" : "South_Face",
         "length" : 17,
@@ -136,7 +136,7 @@
         "camping" : true,
         "fishing" : true,
         "Permit Required" : false,
-        "2WDaccess": false,
+        "TWDaccess": 2,
       }]
   }
 ]
