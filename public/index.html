@@ -2,68 +2,50 @@
 <html>
   <head>
     <meta charset="utf-8">
-    <title>Welcome to Firebase Hosting</title>
-    <style media="screen">
-      body {
-        font-family: Roboto, Arial, sans-serif;
-        background: #ECEFF1;
-        color: rgba(0,0,0,0.87);
-      }
-
-      a {
-        color: rgb(3,155,229);
-      }
-
-      #message {
-        max-width: 400px;
-        margin: 40px auto;
-        box-shadow: 0 1px 3px 0 rgba(0,0,0,0.2),0 1px 1px 0 rgba(0,0,0,0.14),0 2px 1px -1px rgba(0,0,0,0.12);
-        border-radius: 2px;
-        background: white;
-        padding: 16px 24px;
-      }
-
-      #message h1 {
-        font-size: 22px;
-        font-weight: 500;
-        text-align: center;
-        margin: 0 0 16px;
-      }
-
-      #message p {
-        font-weight: 300;
-        line-height: 150%;
-      }
-
-      #message ul {
-        list-style: none;
-        margin: 16px 0 0;
-        padding: 0;
-        text-align: center;
-      }
-
-      #message li a {
-        display: inline-block;
-        padding: 8px;
-        text-transform: uppercase;
-        text-decoration: none;
-        font-weight: 500;
-        background: rgb(3,155,229);
-        color: white;
-        border: 1px solid rgb(3,155,229);
-        border-radius: 3px;
-        font-size: 14px;
-        box-shadow: 0 2px 5px 0 rgba(0,0,0,.26);
-      }
-    </style>
+    <title>PE&Delta;Kspec</title>
+    <link rel="stylesheet" href="hikefilter.css" media="screen" title="no title" charset="utf-8">
+    <link href="https://fonts.googleapis.com/css?family=Josefin+Slab:300,400" rel="stylesheet">
   </head>
-  <body>
-    <div id="message">
-      <h1>Welcome to Firebase Hosting</h1>
-      <p>You're seeing this because you've successfully setup Firebase Hosting. Now it's time to go build something extraordinary!</p>
-      <ul>
-        <li><a target="_blank" href="https://firebase.google.com/docs/hosting/">Open Hosting Documentation</a></li>
-      </ul>
+  <body class = "pic">
+    <h1 id = "splashTitle"><p>PE&Delta;Kspec</p></h1>
+    <div id="container">
+      <div id="left">
+        Hike Length (RT):<br><br>
+        Vertical Gain:<br><br>
+        Exposure:<br><br>
+        Current Address:<br><br>
+        2WD Access:<br><br>
+      </div>
+      <form id="filter" action="second.html" method="get">
+        <select name = "len" class="opt">
+          <option value=1000>No Preference</option>
+          <option value=5><5 miles</option>
+          <option value=10><10 miles</option>
+          <option value=15><15 miles</option>
+          <option value=20><20 miles</option>
+          <option value=30><30 miles</option>
+        </select><br>
+        <select name = "gain" class="opt">
+          <option value=100000>No Preference</option>
+          <option value=3000><3000ft</option>
+          <option value=4000><4000ft</option>
+          <option value=5000><5000ft</option>
+          <option value=6000><6000ft</option>
+          <option value=7000><7000ft</option>
+        </select><br>
+        <select name = "class" class="opt">
+          <option value=100>No Preference</option>
+          <option value=2>Class 1</option>
+          <option value=3>Class 2</option>
+          <option value=4>Class 3</option>
+          <option value=5>Class 4</option>
+        </select><br>
+        <input type="text" name="address" id="texty" class="opt" placeholder="200 E Colfax Ave, Denver, CO 80203" value=""><br>
+        <input type="radio" name="2WD" class="two" checked="checked" value=3>Yes<input type="radio" name="2WD" id="two" value=5>No Preference<br>
+        <input type="submit" id= "submit" value="Find a 14er">
+      </form>
     </div>
+    <script   src="https://code.jquery.com/jquery-2.2.4.js"   integrity="sha256-iT6Q9iMJYuQiMWNd9lDyBUStIq/8PuOW33aOqmvFpqI="   crossorigin="anonymous"></script>
+    <script src="hikefilter.js" charset="utf-8"></script>
   </body>
 </html>

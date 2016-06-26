@@ -47,13 +47,13 @@
   cursor: pointer; cursor: hand;
 }
 .opt{
-  margin-bottom: 18px;
+  margin-bottom: 16px;
   font-family: 'Josefin Slab', serif;
   -webkit-appearance: none;
   width: 30%;
   height: 8%;
   text-align: center;
-  cursor: pointer; cursor: hand;
+  /*cursor: pointer; cursor: hand;*/
 }
 #submit{
   width: 55%;
@@ -65,4 +65,5 @@
   border: 2px solid gray;
   margin-top: 20px;
   margin-left: -50%;
+  cursor: pointer; cursor: hand;
 }

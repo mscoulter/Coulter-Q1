@@ -1,5 +1,11 @@
 $("#submit").click(function() {
+  // if (true) {
+  //   console.log("#texty");
+  //   alert("Please Enter Current Location!")
+  // }
+  // else{
   window.location = "second.html"
+  // }
 });
 
 var x = location.search
@@ -31,20 +37,23 @@ console.log(resultCoords);
 var map;
 function initMap (){
   map = new google.maps.Map(document.getElementById('map'), {
-    center: {lat: 39.0567377, lng: -105.2778153},
-    zoom: 7
+    center: {lat: 38.74, lng: -106.4},
+    zoom: 8,
+    mapTypeId: google.maps.MapTypeId.TERRAIN,
   });
   var geocoder = new google.maps.Geocoder();
   geocoder.geocode({'address': address},function(results, status){
     var latitude = results[0].geometry.location.lat();
     var longitude = results[0].geometry.location.lng();
+    var homeMarker = "home.png"
     var marker = new google.maps.Marker({
       position: {lat: latitude, lng: longitude},
       map: map,
+      icon: homeMarker,
       title: "Input_Address"
     });
   });
-
+  var peakMarker = 'peak.png';
   for (var i = 0; i < resultCoords.length; i++) {
     var lat = parseFloat(resultCoords[i].slice(0,7))
     var long = parseFloat(resultCoords[i].slice(9,17))*-1
@@ -52,7 +61,36 @@ function initMap (){
     var marker = new google.maps.Marker({
       position: {lat: lat, lng: long},
       map: map,
-      title: "Results"
+      icon: peakMarker,
+      title: "Results",
+      mountain: (results[i].mountain).replace(/_/g, " "),
+      routeName: (results[i].routes[0].name).replace(/_/g, " "),
+      routeLength: results[i].routes[0].length,
+      routeDifficulty: (results[i].routes[0].difficulty).replace(/_/g," "),
+      routeDays: results[i].routes[0].days,
+      routeFishing: results[i].routes[0].fishing,
+      routeTrailhead: results[i].routes[0].trailhead.replace(/_/g," "),
+      website: results[i].routes[0].website,
+
     })
+    var infoWindow = new google.maps.InfoWindow({
+      maxWidth: 200,
+    });
+    google.maps.event.addListener(marker, 'click', function () {
+            console.log(this);
+            infoWindow.setContent(
+              "<p><b>"+this.mountain+"</b><br>"+
+              "Route Name: "+this.routeName+"<br>"+
+              "Difficulty: "+this.routeDifficulty+"<br>"+
+              "Length: "+this.routeLength+"<br>"+
+              "Days: "+this.routeDays+"<br>"+
+              "Fishing: "+this.routeFishing+"<br>"+
+              "Trailhead: "+this.routeTrailhead+"<br>"+
+              "<a href='"+this.website+"' target='_blank'>"+"More Information"+"</a><br>"+
+              "</p>"
+          );
+            infoWindow.open(map, this);
+    });
   }
+
 }

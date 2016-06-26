@@ -17,6 +17,7 @@ var data = [
         "fishing" : true,
         "permitRequired" : false,
         "TWDaccess": 2,
+        "website" : "http://www.14ers.com/route.php?route=capi1&peak=Capitol+Peak"
       }]
   },
   {
@@ -37,13 +38,14 @@ var data = [
         "fishing" : true,
         "Permit Required" : false,
         "TWDaccess": 2,
+        "website" : "http://www.14ers.com/route.php?route=litt6&peak=Blanca%2C+Ellingwood+and+Little+Bear"
       }]
   },
   {
     "mountain" : "Pyramid_Peak",
     "elevation" : 14018,
     "heightRank" : 47,
-    "coordinates" : "39.0418+-106.5701",
+    "coordinates" : "39.0714+-106.9503",
     "routes" : [{
         "name" : "Northeast Ridge",
         "length" : 8.25,
@@ -56,7 +58,8 @@ var data = [
         "camping" : true,
         "fishing" : true,
         "Permit Required" : true,
-        "TWDaccess": 2,
+        "TWDaccess" : 2,
+        "website" : "http://www.14ers.com/route.php?route=pyra1&peak=Pyramid+Peak"
       }]
   },
   {
@@ -77,6 +80,7 @@ var data = [
         "fishing" : true,
         "Permit Required" : false,
         "TWDaccess" : 2,
+        "website" : "http://www.14ers.com/route.php?route=nmar2&peak=The+Maroon+Bells"
       }]
   },
   {
@@ -97,6 +101,7 @@ var data = [
         "fishing" : false,
         "Permit Required" : false,
         "TWDaccess" : 2,
+        "website" : "http://www.14ers.com/route.php?route=mwil2&peak=Mt.+Wilson%2C+Wilson+Peak%2C+and+El+Diente+Peak"
       }]
   },
   {
@@ -117,6 +122,7 @@ var data = [
         "fishing" : true,
         "Permit Required" : false,
         "TWDaccess" : 4,
+        "website" : "http://www.14ers.com/route.php?route=cnee1&peak=Crestone+Peak+and+Crestone+Needle"
       }]
   },
   {
@@ -137,6 +143,7 @@ var data = [
         "fishing" : true,
         "Permit Required" : false,
         "TWDaccess": 2,
+        "website": "http://www.14ers.com/route.php?route=sunl2&peak=Mt.+Eolus%2C+Windom+Peak%2C+and+Sunlight+Peak"
       }]
   }
 ]
