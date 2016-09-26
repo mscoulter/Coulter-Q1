@@ -1,11 +1,5 @@
-$("#submit").click(function() {
-  // if (true) {
-  //   console.log("#texty");
-  //   alert("Please Enter Current Location!")
-  // }
-  // else{
-  window.location = "second.html"
-  // }
+$("#submit").click(function(event) {
+  window.location = "../views/second.html"
 });
 
 var x = location.search
@@ -21,7 +15,6 @@ var exposure = y[3][0];
 var address = (y[4][0]).replace(/%2C/,"")
 var access = y[5][0];
 
-console.log(access);
 var results=[]
 var resultCoords=[]
 
@@ -32,20 +25,20 @@ $.grep(data, function(n, i){
       console.log(n.mountain);
     }
 })
-console.log(results);
-console.log(resultCoords);
+
 var map;
+
 function initMap (){
   map = new google.maps.Map(document.getElementById('map'), {
     center: {lat: 38.74, lng: -106.4},
-    zoom: 8,
+    zoom: 7,
     mapTypeId: google.maps.MapTypeId.TERRAIN,
   });
   var geocoder = new google.maps.Geocoder();
   geocoder.geocode({'address': address},function(results, status){
     var latitude = results[0].geometry.location.lat();
     var longitude = results[0].geometry.location.lng();
-    var homeMarker = "home.png"
+    var homeMarker = "../images/home.png"
     var marker = new google.maps.Marker({
       position: {lat: latitude, lng: longitude},
       map: map,
@@ -53,11 +46,10 @@ function initMap (){
       title: "Input_Address"
     });
   });
-  var peakMarker = 'peak.png';
+  var peakMarker = '../images/peak.png';
   for (var i = 0; i < resultCoords.length; i++) {
     var lat = parseFloat(resultCoords[i].slice(0,7))
     var long = parseFloat(resultCoords[i].slice(9,17))*-1
-    console.log(lat+", "+long);
     var marker = new google.maps.Marker({
       position: {lat: lat, lng: long},
       map: map,
@@ -77,7 +69,6 @@ function initMap (){
       maxWidth: 200,
     });
     google.maps.event.addListener(marker, 'click', function () {
-            console.log(this);
             infoWindow.setContent(
               "<p><b>"+this.mountain+"</b><br>"+
               "Route Name: "+this.routeName+"<br>"+
