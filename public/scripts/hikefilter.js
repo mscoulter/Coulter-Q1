@@ -1,5 +1,5 @@
 $("#submit").click(function(event) {
-  window.location = "../views/second.html"
+  window.location = "../second.html"
 });
 
 var x = location.search
@@ -22,7 +22,6 @@ $.grep(data, function(n, i){
     if(n.routes[0].length<length && n.routes[0].elevationGain<gain && n.routes[0].class<exposure && n.routes[0].TWDaccess<access){
       results.push(n)
       resultCoords.push(n.coordinates)
-      console.log(n.mountain);
     }
 })
 
@@ -35,10 +34,11 @@ function initMap (){
     mapTypeId: google.maps.MapTypeId.TERRAIN,
   });
   var geocoder = new google.maps.Geocoder();
+  console.log(results);
   geocoder.geocode({'address': address},function(results, status){
     var latitude = results[0].geometry.location.lat();
     var longitude = results[0].geometry.location.lng();
-    var homeMarker = "../images/home.png"
+    var homeMarker = "./images/home.png"
     var marker = new google.maps.Marker({
       position: {lat: latitude, lng: longitude},
       map: map,
@@ -46,7 +46,7 @@ function initMap (){
       title: "Input_Address"
     });
   });
-  var peakMarker = '../images/peak.png';
+  var peakMarker = './images/peak.png';
   for (var i = 0; i < resultCoords.length; i++) {
     var lat = parseFloat(resultCoords[i].slice(0,7))
     var long = parseFloat(resultCoords[i].slice(9,17))*-1
